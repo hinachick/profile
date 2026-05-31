@@ -10,14 +10,15 @@
 
   <style>
     :root {
-      --bg: #fff7fa;
-      --card: rgba(255, 255, 255, 0.92);
-      --text: #5d6472;
-      --muted: #8b93a3;
-      --pink: #e9b8c7;
-      --pink-dark: #d995aa;
-      --line: #f2d8e1;
-      --shadow: 0 14px 35px rgba(180, 130, 150, 0.16);
+      --bg: #f8f4ef;
+      --card: #fffdfa;
+      --text: #4f4944;
+      --muted: #8b837b;
+      --accent: #c7a27c;
+      --accent-dark: #a67b52;
+      --accent-light: #e7d8c8;
+      --soft: #f0e7dd;
+      --shadow: 0 14px 35px rgba(110, 90, 70, 0.10);
     }
 
     * {
@@ -26,6 +27,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 98px;
     }
 
     body {
@@ -33,55 +35,68 @@
       font-family: "M PLUS Rounded 1c", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 8% 20%, rgba(255, 198, 214, 0.35), transparent 25%),
-        radial-gradient(circle at 95% 85%, rgba(255, 219, 228, 0.55), transparent 24%),
-        linear-gradient(180deg, #fff9fb 0%, #fff3f7 100%);
+        radial-gradient(circle at 10% 18%, rgba(199, 162, 124, 0.16), transparent 24%),
+        radial-gradient(circle at 92% 82%, rgba(231, 216, 200, 0.35), transparent 22%),
+        linear-gradient(180deg, #fcfaf7 0%, #f7f2eb 100%);
       min-height: 100vh;
+      position: relative;
     }
 
     body::before,
     body::after {
-      content: "✿";
       position: fixed;
-      color: rgba(216, 149, 170, 0.28);
       z-index: -1;
       pointer-events: none;
+      color: rgba(166, 123, 82, 0.12);
+      font-size: 92px;
     }
 
     body::before {
-      font-size: 120px;
-      left: -20px;
-      top: 210px;
-      transform: rotate(-18deg);
+      content: "🐾";
+      left: 18px;
+      top: 170px;
+      transform: rotate(-14deg);
     }
 
     body::after {
-      font-size: 150px;
-      right: -18px;
-      bottom: 40px;
-      transform: rotate(18deg);
+      content: "🐾";
+      right: 28px;
+      bottom: 54px;
+      transform: rotate(10deg);
+      font-size: 108px;
+    }
+
+    a {
+      color: var(--accent-dark);
     }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 10;
-      height: 72px;
+      height: 74px;
       padding: 0 44px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 253, 250, 0.90);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(240, 210, 220, 0.65);
+      border-bottom: 1px solid var(--soft);
     }
 
     .brand {
       font-size: 18px;
       font-weight: 800;
       letter-spacing: 0.03em;
-      color: #636a78;
+      color: var(--text);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand i {
+      color: var(--accent-dark);
     }
 
     .topnav {
@@ -91,15 +106,15 @@
     }
 
     .topnav a {
-      color: #6f7684;
+      color: var(--muted);
       text-decoration: none;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       transition: 0.2s ease;
     }
 
     .topnav a:hover {
-      color: var(--pink-dark);
+      color: var(--accent-dark);
     }
 
     .page {
@@ -113,8 +128,8 @@
       gap: 36px;
       align-items: center;
       background: var(--card);
-      border-left: 5px solid var(--pink);
-      border-radius: 4px;
+      border-left: 6px solid var(--accent);
+      border-radius: 22px;
       padding: 34px 38px;
       box-shadow: var(--shadow);
       position: relative;
@@ -124,21 +139,32 @@
     .hero::before {
       content: "";
       position: absolute;
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      background: rgba(237, 185, 201, 0.18);
-      right: -45px;
-      top: -55px;
+      background: rgba(199, 162, 124, 0.10);
+      right: -50px;
+      top: -60px;
+    }
+
+    .hero::after {
+      content: "ฅ^•ﻌ•^ฅ";
+      position: absolute;
+      right: 22px;
+      bottom: 14px;
+      font-size: 14px;
+      color: rgba(166, 123, 82, 0.50);
+      letter-spacing: 0.04em;
     }
 
     .photo {
       width: 240px;
       height: 240px;
-      border-radius: 12px;
+      border-radius: 24px;
       overflow: hidden;
-      background: #f7e8ee;
-      box-shadow: 0 10px 24px rgba(160, 120, 135, 0.18);
+      background: #f1e6d8;
+      box-shadow: 0 10px 24px rgba(120, 95, 70, 0.16);
+      border: 3px solid #f5ede4;
     }
 
     .photo img {
@@ -156,30 +182,32 @@
     h1 {
       margin: 0 0 12px;
       font-size: 34px;
-      letter-spacing: 0.08em;
-      color: #626977;
+      letter-spacing: 0.05em;
+      color: var(--text);
       font-weight: 800;
+      line-height: 1.4;
     }
 
     .jp-info {
       margin: 0 0 14px;
       line-height: 1.9;
       font-size: 15px;
-      color: #6f7684;
+      color: #6f675f;
     }
 
     .lab-link {
-      color: #6f7684;
+      color: var(--accent-dark);
       text-decoration: underline;
       text-underline-offset: 4px;
-      text-decoration-color: #d9a5b7;
+      text-decoration-color: var(--accent);
     }
 
     .intro {
       margin: 22px 0 20px;
       font-size: 16px;
-      line-height: 1.8;
-      color: #737b8b;
+      line-height: 1.9;
+      color: #756d66;
+      max-width: 720px;
     }
 
     .icons {
@@ -190,30 +218,32 @@
     }
 
     .icons a {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      color: #697080;
-      background: #f7edf1;
+      color: #6e665d;
+      background: #f4ece3;
       text-decoration: none;
       transition: 0.2s ease;
+      border: 1px solid #efe2d3;
     }
 
     .icons a:hover {
       color: white;
-      background: var(--pink-dark);
+      background: var(--accent-dark);
       transform: translateY(-2px);
     }
 
     .section {
       margin-top: 46px;
       background: var(--card);
-      border-radius: 4px;
+      border-radius: 22px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(242, 216, 225, 0.75);
+      border: 1px solid var(--soft);
       overflow: hidden;
+      scroll-margin-top: 98px;
     }
 
     .section-title {
@@ -221,50 +251,57 @@
       padding: 18px 26px;
       font-size: 24px;
       font-weight: 800;
-      color: #697080;
-      border-bottom: 1px solid var(--line);
+      color: var(--text);
+      border-bottom: 1px solid var(--soft);
       background: rgba(255, 255, 255, 0.78);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .section-title i {
-      color: var(--pink-dark);
-      margin-right: 8px;
+      color: var(--accent-dark);
+      width: 24px;
+      text-align: center;
     }
 
     .section-body {
       padding: 28px 34px 30px;
     }
 
-    .pub-list {
-      margin: 0;
-      padding-left: 26px;
+    .subheading {
+      font-size: 16px;
+      color: var(--text);
+      margin: 0 0 14px 0;
+      font-weight: 700;
     }
 
-    .pub-list:first-of-type {
-      margin: 0 0 20px 0;
+    .pub-list {
+      margin: 0 0 22px 0;
+      padding-left: 24px;
     }
 
     .pub-list li {
       margin-bottom: 18px;
-      line-height: 1.85;
+      line-height: 1.9;
       font-size: 15px;
-      color: #6b7280;
+      color: var(--text);
     }
 
     .pub-list strong {
-      color: #565d6b;
+      color: var(--text);
       font-weight: 800;
       text-decoration: underline;
-      text-decoration-color: #dcb0bf;
+      text-decoration-color: var(--accent-light);
       text-underline-offset: 3px;
     }
 
     .tag {
       display: inline-block;
       margin-left: 6px;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: 999px;
-      background: #e9b8c7;
+      background: var(--accent);
       color: white;
       font-size: 12px;
       font-weight: 700;
@@ -273,55 +310,126 @@
     }
 
     .tag:hover {
-      background: var(--pink-dark);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      background: var(--accent-dark);
     }
 
     .mini-card {
-      padding: 20px 22px;
-      background: transparent;
-      border: none;
-      border-radius: 14px;
+      padding: 18px 0;
+      border-bottom: 1px dashed #eadfd2;
+    }
+
+    .mini-card:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .mini-card:first-child {
+      padding-top: 0;
     }
 
     .mini-card h3 {
-      margin: 0 0 10px;
-      color: #626977;
-      font-size: 22px;
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 18px;
       font-weight: 800;
+      line-height: 1.7;
     }
 
     .mini-card .date {
       font-size: 12px;
-      color: #9aa1af;
-      font-weight: 600;
+      color: var(--muted);
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 4px;
     }
 
     .mini-card p,
     .mini-card li {
+      margin: 0;
       font-size: 14px;
       line-height: 1.8;
-      color: #747c8b;
+      color: var(--muted);
     }
 
-    .mini-card ul {
+    .interest-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .interest-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: #fcf8f3;
+      border: 1px solid var(--soft);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(110, 90, 70, 0.06);
+    }
+
+    .interest-list span::before {
+      content: "🐾";
+      font-size: 12px;
+      opacity: 0.72;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: #fcf8f3;
+      border: 1px solid var(--soft);
+      border-radius: 16px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .contact-card .label {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-card p {
       margin: 0;
-      padding-left: 20px;
+      font-size: 15px;
+      line-height: 1.7;
+      word-break: break-word;
     }
 
     .footer {
       text-align: center;
       margin-top: 44px;
-      color: #9aa1af;
+      color: var(--muted);
       font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 820px) {
+      html {
+        scroll-padding-top: 145px;
+      }
+
+      .section {
+        scroll-margin-top: 145px;
+      }
+
       .topbar {
         height: auto;
         padding: 18px 22px;
@@ -346,6 +454,10 @@
         padding: 28px 22px;
       }
 
+      .hero::after {
+        display: none;
+      }
+
       .photo {
         margin: 0 auto;
         width: 220px;
@@ -356,8 +468,8 @@
         justify-content: center;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .section-body {
+        padding: 24px 22px 26px;
       }
     }
   </style>
@@ -365,17 +477,22 @@
 
 <body>
   <header class="topbar">
-    <a class="brand" href="#">Hina Kogure</a>
+    <a class="brand" href="#top">
+      <i class="fa-solid fa-paw"></i>
+      Hina Kogure
+    </a>
 
     <nav class="topnav">
       <a href="#publications">Publications</a>
       <a href="#education">Education</a>
+      <a href="#qualifications">Qualifications</a>
       <a href="#work">Employments</a>
+      <a href="#interests">Interests</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main class="page">
+  <main id="top" class="page">
     <section class="hero">
       <div class="photo">
         <img src="images/profile.jpg" alt="Hina Kogure">
@@ -386,131 +503,190 @@
 
         <p class="jp-info">
           慶應義塾大学大学院 理工学研究科<br>
-          開放環境科学専攻 情報工学専修 修士1年<br>
-          <a class="lab-link" href="#">杉浦孔明研究室</a>
+          人間・社会システム情報科学専攻 オープンサイエンスカリキュラム 修士1年<br>
+          <a class="lab-link" href="https://smilab.org/">杉浦孔明研究室</a>
         </p>
 
         <p class="intro">
           I am a Master&apos;s student advised by Prof. Komei Sugiura at Keio University in Japan.
-          My research interests include computer vision, 4D urban reconstruction, satellite-based urban prediction, and vision-language models.
+          My research interests include computer vision, 4D urban reconstruction,
+          satellite-based urban prediction, and vision-language models.
         </p>
 
         <div class="icons">
-          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="#" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://x.com/" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://github.com/hinachick" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hina-kogure-a66ba0412/?isSelfProfile=true" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:hina.chick1717@keio.jp" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
     </section>
 
     <section id="publications" class="section">
-      <h2 class="section-title"><i class="fa-solid fa-book-open"></i>Publications</h2>
+      <h2 class="section-title">
+        <i class="fa-solid fa-book-open"></i>
+        Publications
+      </h2>
 
       <div class="section-body">
-        <h3 style="font-size: 16px; color: #626977; margin: 0 0 14px 0; padding-left: 0; font-weight: 700;">International Conference</h3>
+        <h3 class="subheading">International Conference</h3>
         <ol class="pub-list">
           <li>
-            <strong>H. Kogure*</strong>, K. Katsumata*, T. Miyanishi, K. Sugiura,
+            <strong>Hina Kogure*</strong>, Kei Katsumata*, Taiki Miyanishi, Komei Sugiura,
             "Stitch4D: Sparse Multi-Location 4D Urban Reconstruction via Spatio-Temporal Interpolation,"
-            European Conference on Computer Vision, 2026. [submitted]
+            arXiv preprint, 2026
             <span style="font-size: 12px; color: #999;">* denotes equal contribution</span>
+            <br>
+            <a class="tag" href="https://arxiv.org/abs/2604.07923" target="_blank">arXiv</a>
+            <a class="tag" href="https://stitch4d-project-page.vercel.app/" target="_blank">Project Page</a>
           </li>
-        <h3 style="font-size: 16px; color: #626977; margin: 18px 0 14px 0; padding-left: 0; font-weight: 700;">国内学会発表</h3>
-        <ol class="pub-list">          <li>
+        </ol>
+
+        <h3 class="subheading">国内学会発表</h3>
+        <ol class="pub-list">
+          <li>
             <strong>木暮緋南</strong>, 勝又圭, 宮西大樹, 杉浦孔明,
-            "Stitching Sparse Multi-Location Views with Interpolation for 4D Urban Scene Reconstruction,"
+            “Stitching Sparse Multi-Location Views with Interpolation for 4D Urban Scene Reconstruction,”
             第29回画像の認識・理解シンポジウム, 出島メッセ長崎, 長崎, 2026年8月
           </li>
 
           <li>
             <strong>木暮緋南</strong>, 勝又圭, 宮西大樹, 杉浦孔明,
-            "複数パノラマ動画を用いた市街地動態の4次元表現再構成,"
-            第40回人工知能学会全国大会, Gメッセ群馬展示ホールC, 群馬, 2026年6月
+            “複数パノラマ動画を用いた市街地動態の4次元表現再構成,”
+            第40回人工知能学会全国大会, 1Yin-A-07, Gメッセ群馬展示ホールC, 群馬, 2026年6月
           </li>
 
           <li>
             <strong>木暮緋南</strong>, 雨宮佳音, 杉浦孔明,
-            "複数粒度のマルチモーダル潜在表現に基づくネイルデザイン検索手法の構築と解析,"
-            第28回画像の認識・理解シンポジウム, 国立京都国際会館, 京都, 2025年7月30日発表済
+            “複数粒度のマルチモーダル潜在表現に基づくネイルデザイン検索手法の構築と解析,”
+            第28回画像の認識・理解シンポジウム, IS1-142, 国立京都国際会館, 京都, 2025年7月
+            <br>
+            <a class="tag" href="https://smilab.org/pdf/2025/2025-08-05T00:50:38+09:00_Hina_Kogure.pdf" target="_blank">PDF</a>
           </li>
         </ol>
       </div>
     </section>
 
-
     <section id="education" class="section">
-      <h2 class="section-title"><i class="fa-solid fa-school"></i>Education</h2>
+      <h2 class="section-title">
+        <i class="fa-solid fa-school"></i>
+        Education
+      </h2>
 
       <div class="section-body">
         <div class="mini-card">
-          <h3><span class="date">2026年4月 –</span><br>慶應義塾大学大学院</h3>
-          <p>
-            理工学研究科 人間・社会システム情報科学専攻<br>
-            オープンサイエンスカリキュラム 修士課程
-          </p>
+          <h3>
+            <span class="date">2026年4月 –</span><br>
+            慶應義塾大学大学院 理工学研究科 人間・社会システム情報科学専攻 オープンサイエンスカリキュラム 修士課程
+          </h3>
         </div>
 
         <div class="mini-card">
-          <h3><span class="date">2023年4月 – 2026年3月</span><br>慶應義塾大学 理工学部</h3>
-          <p>
-            情報工学科 (編入学)
-          </p>
+          <h3>
+            <span class="date">2023年4月 – 2026年3月</span><br>
+            慶應義塾大学 理工学部 情報工学科
+          </h3>
+          <p>第2学年編入学</p>
         </div>
 
         <div class="mini-card">
-          <h3><span class="date">2022年4月 – 2023年3月</span><br>慶應義塾大学 経済学部</h3>
-          <p>
-            経済学科
-          </p>
+          <h3>
+            <span class="date">2022年4月 – 2023年3月</span><br>
+            慶應義塾大学 経済学部 経済学科
+          </h3>
         </div>
 
         <div class="mini-card">
-          <h3><span class="date">2018年4月 – 2021年3月</span><br>青山学院高等部</h3>
+          <h3>
+            <span class="date">2018年4月 – 2021年3月</span><br>
+            青山学院高等部
+          </h3>
         </div>
 
         <div class="mini-card">
-          <h3><span class="date">2015年4月 – 2018年3月</span><br>青山学院中等部</h3>
+          <h3>
+            <span class="date">2015年4月 – 2018年3月</span><br>
+            青山学院中等部
+          </h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="qualifications" class="section">
+      <h2 class="section-title">
+        <i class="fa-solid fa-certificate"></i>
+        Qualifications
+      </h2>
+
+      <div class="section-body">
+        <div class="mini-card">
+          <h3>宅地建物取引士</h3>
         </div>
       </div>
     </section>
 
     <section id="work" class="section">
-      <h2 class="section-title"><i class="fa-solid fa-briefcase"></i>Employments</h2>
+      <h2 class="section-title">
+        <i class="fa-solid fa-briefcase"></i>
+        Employments
+      </h2>
 
       <div class="section-body">
         <div class="mini-card">
-          <h3><span class="date">2026年4月 –</span><br>慶應義塾大学</h3>
-          <p>
-            Research Assistant
-          </p>
+          <h3>
+            <span class="date">2026年4月 –</span><br>
+            慶應義塾大学
+          </h3>
+          <p>Research Assistant</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section">
+      <h2 class="section-title">
+        <i class="fa-solid fa-paw"></i>
+        Personal Interests
+      </h2>
+
+      <div class="section-body">
+        <div class="interest-list">
+          <span>Cats</span>
+          <span>K-pop</span>
+          <span>Games</span>
+          <span>Korean learning</span>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section">
-      <h2 class="section-title"><i class="fa-solid fa-envelope"></i>Contact</h2>
+      <h2 class="section-title">
+        <i class="fa-solid fa-envelope"></i>
+        Contact
+      </h2>
 
       <div class="section-body">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center;">
-          <div>
-            <p style="font-size: 12px; color: #9aa1af; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">Email</p>
-            <p style="margin: 0; font-size: 15px;"><a href="mailto:hina.chick1717@keio.jp">hina.chick1717@keio.jp</a></p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p class="label">Email</p>
+            <p><a href="mailto:hina.chick1717[at]keio.jp">hina.chick1717@keio.jp</a></p>
           </div>
-          <div>
-            <p style="font-size: 12px; color: #9aa1af; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">Location</p>
-            <p style="margin: 0; font-size: 15px;">慶應義塾大学矢上キャンパス</p>
+
+          <div class="contact-card">
+            <p class="label">Location</p>
+            <p>慶應義塾大学矢上キャンパス</p>
           </div>
-          <div>
-            <p style="font-size: 12px; color: #9aa1af; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">GitHub</p>
-            <p style="margin: 0; font-size: 15px;"><a href="https://github.com/hinachick">@hinachick</a></p>
+
+          <div class="contact-card">
+            <p class="label">GitHub</p>
+            <p><a href="https://github.com/hinachick">@hinachick</a></p>
           </div>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      © Hina Kogure. Made with soft pixels and tiny sakura.
+      © Hina Kogure.<br>
+      Made with soft pixels and tiny paws.
     </footer>
   </main>
 </body>
