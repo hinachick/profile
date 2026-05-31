@@ -240,6 +240,10 @@
       padding-left: 26px;
     }
 
+    .pub-list:first-of-type {
+      margin: 0 0 20px 0;
+    }
+
     .pub-list li {
       margin-bottom: 18px;
       line-height: 1.85;
@@ -280,15 +284,22 @@
 
     .mini-card {
       padding: 20px 22px;
-      background: rgba(255, 248, 251, 0.88);
-      border: 1px solid var(--line);
+      background: transparent;
+      border: none;
       border-radius: 14px;
     }
 
     .mini-card h3 {
       margin: 0 0 10px;
       color: #626977;
-      font-size: 17px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .mini-card .date {
+      font-size: 12px;
+      color: #9aa1af;
+      font-weight: 600;
     }
 
     .mini-card p,
@@ -397,7 +408,7 @@
       <h2 class="section-title"><i class="fa-solid fa-book-open"></i>Publications</h2>
 
       <div class="section-body">
-        <h3 style="font-size: 16px; color: #626977; margin: 0 0 14px 0; font-weight: 700;">International Conference</h3>
+        <h3 style="font-size: 16px; color: #626977; margin: 0 0 14px 0; padding-left: 0; font-weight: 700;">International Conference</h3>
         <ol class="pub-list">
           <li>
             <strong>H. Kogure*</strong>, K. Katsumata*, T. Miyanishi, K. Sugiura,
@@ -405,7 +416,7 @@
             European Conference on Computer Vision, 2026. [submitted]
             <span style="font-size: 12px; color: #999;">* denotes equal contribution</span>
           </li>
-        <h3 style="font-size: 16px; color: #626977; margin: 18px 0 14px 0; font-weight: 700;">国内学会発表</h3>
+        <h3 style="font-size: 16px; color: #626977; margin: 18px 0 14px 0; padding-left: 0; font-weight: 700;">国内学会発表</h3>
         <ol class="pub-list">          <li>
             <strong>木暮緋南</strong>, 勝又圭, 宮西大樹, 杉浦孔明,
             "Stitching Sparse Multi-Location Views with Interpolation for 4D Urban Scene Reconstruction,"
@@ -433,41 +444,33 @@
 
       <div class="section-body">
         <div class="mini-card">
-          <h3>2026年4月 –</h3>
+          <h3><span class="date">2026年4月 –</span><br>慶應義塾大学大学院</h3>
           <p>
-            慶應義塾大学大学院 理工学研究科<br>
-            人間・社会システム情報科学専攻 オープンサイエンスカリキュラム<br>
-            修士課程
+            理工学研究科 人間・社会システム情報科学専攻<br>
+            オープンサイエンスカリキュラム 修士課程
           </p>
         </div>
 
         <div class="mini-card">
-          <h3>2023年4月 – 2026年3月</h3>
+          <h3><span class="date">2023年4月 – 2026年3月</span><br>慶應義塾大学 理工学部</h3>
           <p>
-            慶應義塾大学 理工学部 情報工学科<br>
-            (編入学)
+            情報工学科 (編入学)
           </p>
         </div>
 
         <div class="mini-card">
-          <h3>2022年4月 – 2023年3月</h3>
+          <h3><span class="date">2022年4月 – 2023年3月</span><br>慶應義塾大学 経済学部</h3>
           <p>
-            慶應義塾大学 経済学部 経済学科
+            経済学科
           </p>
         </div>
 
         <div class="mini-card">
-          <h3>2018年4月 – 2021年3月</h3>
-          <p>
-            青山学院高等部
-          </p>
+          <h3><span class="date">2018年4月 – 2021年3月</span><br>青山学院高等部</h3>
         </div>
 
         <div class="mini-card">
-          <h3>2015年4月 – 2018年3月</h3>
-          <p>
-            青山学院中等部
-          </p>
+          <h3><span class="date">2015年4月 – 2018年3月</span><br>青山学院中等部</h3>
         </div>
       </div>
     </section>
@@ -477,8 +480,10 @@
 
       <div class="section-body">
         <div class="mini-card">
-          <h3>Work Experience</h3>
-          <p>インターン・アルバイト・研究補助などをここに記載します。</p>
+          <h3><span class="date">2026年4月 –</span><br>慶應義塾大学</h3>
+          <p>
+            Research Assistant
+          </p>
         </div>
       </div>
     </section>
@@ -487,7 +492,20 @@
       <h2 class="section-title"><i class="fa-solid fa-envelope"></i>Contact</h2>
 
       <div class="section-body">
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center;">
+          <div>
+            <p style="font-size: 12px; color: #9aa1af; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">Email</p>
+            <p style="margin: 0; font-size: 15px;"><a href="mailto:hina.chick1717@keio.jp">hina.chick1717@keio.jp</a></p>
+          </div>
+          <div>
+            <p style="font-size: 12px; color: #9aa1af; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">Location</p>
+            <p style="margin: 0; font-size: 15px;">慶應義塾大学矢上キャンパス</p>
+          </div>
+          <div>
+            <p style="font-size: 12px; color: #9aa1af; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">GitHub</p>
+            <p style="margin: 0; font-size: 15px;"><a href="https://github.com/hinachick">@hinachick</a></p>
+          </div>
+        </div>
       </div>
     </section>
 
