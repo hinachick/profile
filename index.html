@@ -452,16 +452,34 @@
     }
 
     .deck-title a {
+      position: relative;
+      display: inline-block;
       color: #172033;
-      text-decoration: underline;
-      text-decoration-color: #8aa6d8;
-      text-decoration-thickness: 3px;
-      text-underline-offset: 5px;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .deck-title a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-dark);
+      transform: scaleX(0);
+      transform-origin: left;
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
     .deck-title a:hover {
       color: var(--accent-dark);
-      text-decoration-color: var(--accent);
+    }
+
+    .deck-title a:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
     }
 
     .deck-thumb {
@@ -736,30 +754,6 @@
       </div>
     </section>
 
-    <!-- <section id="speakerdeck" class="section">
-      <h2 class="section-title">
-        <i class="fa-solid fa-file-lines"></i>
-        Speaker Deck
-      </h2>
-
-      <div class="section-body">
-        <div class="mini-card">
-          <h3>
-            <a href="https://speakerdeck.com/keio_smilab/journal-club-freetimegs-free-gaussian-primitives-at-anytime-and-anywhere-for-dynamic-scene-reconstruction" target="_blank">Free Gaussian Primitives — Dynamic Scene Reconstruction</a>
-          </h3>
-          <p>Journal Club presentation: Free Gaussian Primitives for dynamic scene reconstruction.</p>
-          <p style="margin-top:8px;"><a class="tag" href="https://speakerdeck.com/keio_smilab/journal-club-freetimegs-free-gaussian-primitives-at-anytime-and-anywhere-for-dynamic-scene-reconstruction" target="_blank">View Slides</a></p>
-        </div>
-
-        <div class="mini-card">
-          <h3>
-            <a href="https://speakerdeck.com/keio_smilab/journal-club-generalized-contrastive-learning-for-multi-modal-retrieval-and-ranking" target="_blank">Generalized Contrastive Learning — Multi-Modal Retrieval</a>
-          </h3>
-          <p>Journal Club presentation: Generalized contrastive learning for multi-modal retrieval and ranking.</p>
-          <p style="margin-top:8px;"><a class="tag" href="https://speakerdeck.com/keio_smilab/journal-club-generalized-contrastive-learning-for-multi-modal-retrieval-and-ranking" target="_blank">View Slides</a></p>
-        </div>
-      </div>
-    </section> -->
     <section id="speakerdeck" class="section">
       <h2 class="section-title">
         <i class="fa-solid fa-file-lines"></i>
