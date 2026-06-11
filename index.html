@@ -9,7 +9,8 @@
 
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://hinachick.github.io/profile/">
-  <link rel="icon" type="image/png" href="images/cat_foot.png">
+  <link rel="icon" type="image/png" href="images/cat_foot.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/cat_foot.png">
 
   <meta property="og:title" content="木暮 緋南 / Hina Kogure">
   <meta property="og:description" content="Keio University graduate student. Research interests include computer vision, 4D urban reconstruction, satellite-based urban prediction, and vision-language models.">
@@ -427,6 +428,78 @@
       line-height: 1.8;
     }
 
+    .deck-list {
+      margin: 0;
+      padding-left: 30px;
+    }
+
+    .deck-list > li {
+      margin-bottom: 38px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .deck-list > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .deck-title {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .deck-title a {
+      color: #172033;
+      text-decoration: underline;
+      text-decoration-color: #8aa6d8;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 5px;
+    }
+
+    .deck-title a:hover {
+      color: var(--accent-dark);
+      text-decoration-color: var(--accent);
+    }
+
+    .deck-thumb {
+      width: min(70%, 640px);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #f4ece3;
+      box-shadow: 0 10px 24px rgba(120, 95, 70, 0.14);
+      margin: 0 auto;
+    }
+
+    .deck-thumb .speakerdeck-iframe {
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0 !important;
+      display: block;
+      border-radius: 10px;
+      box-shadow: none !important;
+    }
+
+    @media (max-width: 820px) {
+      .deck-list {
+        padding-left: 22px;
+      }
+
+      .deck-thumb {
+        width: 100%;
+      }
+
+      .deck-title {
+        font-size: 18px;
+      }
+    }
+
     @media (max-width: 900px) {
       .contact-grid {
         grid-template-columns: 1fr;
@@ -499,6 +572,7 @@
       <a href="#education">Education</a>
       <a href="#qualifications">Qualifications</a>
       <a href="#work">Employments</a>
+      <a href="#speakerdeck">Speaker Deck</a>
       <a href="#interests">Interests</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -566,6 +640,8 @@
             <strong>木暮緋南</strong>, 勝又圭, 宮西大樹, 杉浦孔明,
             “複数パノラマ動画を用いた市街地動態の4次元表現再構成,”
             第40回人工知能学会全国大会, 1Yin-A-07, Gメッセ群馬展示ホールC, 群馬, 2026年6月
+            <br>
+            <a class="tag" href="https://smilab.org/pdf/2026/2026-06-09T19:41:54+09:00_Hina_Kogure.pdf" target="_blank">PDF</a>
           </li>
 
           <li>
@@ -657,6 +733,66 @@
           </h3>
           <p>Research Assistant</p>
         </div>
+      </div>
+    </section>
+
+    <!-- <section id="speakerdeck" class="section">
+      <h2 class="section-title">
+        <i class="fa-solid fa-file-lines"></i>
+        Speaker Deck
+      </h2>
+
+      <div class="section-body">
+        <div class="mini-card">
+          <h3>
+            <a href="https://speakerdeck.com/keio_smilab/journal-club-freetimegs-free-gaussian-primitives-at-anytime-and-anywhere-for-dynamic-scene-reconstruction" target="_blank">Free Gaussian Primitives — Dynamic Scene Reconstruction</a>
+          </h3>
+          <p>Journal Club presentation: Free Gaussian Primitives for dynamic scene reconstruction.</p>
+          <p style="margin-top:8px;"><a class="tag" href="https://speakerdeck.com/keio_smilab/journal-club-freetimegs-free-gaussian-primitives-at-anytime-and-anywhere-for-dynamic-scene-reconstruction" target="_blank">View Slides</a></p>
+        </div>
+
+        <div class="mini-card">
+          <h3>
+            <a href="https://speakerdeck.com/keio_smilab/journal-club-generalized-contrastive-learning-for-multi-modal-retrieval-and-ranking" target="_blank">Generalized Contrastive Learning — Multi-Modal Retrieval</a>
+          </h3>
+          <p>Journal Club presentation: Generalized contrastive learning for multi-modal retrieval and ranking.</p>
+          <p style="margin-top:8px;"><a class="tag" href="https://speakerdeck.com/keio_smilab/journal-club-generalized-contrastive-learning-for-multi-modal-retrieval-and-ranking" target="_blank">View Slides</a></p>
+        </div>
+      </div>
+    </section> -->
+    <section id="speakerdeck" class="section">
+      <h2 class="section-title">
+        <i class="fa-solid fa-file-lines"></i>
+        Speaker Deck
+      </h2>
+
+      <div class="section-body">
+        <h3 class="subheading">Journal Club</h3>
+        <ol class="deck-list">
+          <li>
+            <h3 class="deck-title">
+              <a href="https://speakerdeck.com/keio_smilab/journal-club-freetimegs-free-gaussian-primitives-at-anytime-and-anywhere-for-dynamic-scene-reconstruction" target="_blank">
+                FreeTimeGS [Wang+, CVPR25]
+              </a>
+            </h3>
+
+            <div class="deck-thumb">
+              <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/a5a41c2ad1b3442493ae348d7340e090" title="[Journal club] FreeTimeGS: Free Gaussian Primitives at Anytime and Anywhere for  Dynamic Scene Reconstruction" allowfullscreen="true" allow="web-share" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+            </div>
+          </li>
+
+          <li>
+            <h3 class="deck-title">
+              <a href="https://speakerdeck.com/keio_smilab/journal-club-generalized-contrastive-learning-for-multi-modal-retrieval-and-ranking" target="_blank">
+                GCL [Zhu+, WWW25]
+              </a>
+            </h3>
+
+            <div class="deck-thumb">
+              <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/e6f7b73b9ecd4a1e921a90fb2e3944c3" title="[Journal club] Generalized Contrastive Learning for Multi-Modal Retrieval and Ranking" allowfullscreen="true" allow="web-share" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
